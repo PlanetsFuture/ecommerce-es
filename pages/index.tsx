@@ -4,16 +4,21 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Landing from "../components/Landing";
 import { fetchCategories } from "../utils/fetchCategories";
+import { fetchProducts } from "../utils/fetchProducts";
 
 interface Props {
   categories: Category[]
+  products: Product[]
 }
+
 // Backend Code
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const categories = await fetchCategories()
+  const products = await fetchProducts()
   return {
     props: {
       categories,
+      products
     },
   }
 }
@@ -23,8 +28,8 @@ interface Props {
 
 }
 
-const Home = ({ categories }: Props) => {
-  console.log(categories)
+const Home = ({ categories, products }: Props) => {
+  console.log(products)
   return (
     <div className="">
       <Head>
