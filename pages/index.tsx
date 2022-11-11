@@ -41,7 +41,7 @@ const Home = ({ categories, products }: Props) => {
   return (
     <div className="">
       <Head>
-        <title>Apple Redesign</title>
+        <title>Coffee Store</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -53,7 +53,7 @@ const Home = ({ categories, products }: Props) => {
       <section className="relative z-40 -mt-[100vh] min-h-screen bg-[#1B1B1B]">
         <div className="space-y-10 py-16">
           <h1 className="text-center text-4xl font-medium tracking-wide text-white md:text-5xl">
-            New Promos
+            Our Products
           </h1>
 
           <Tab.Group>
@@ -78,7 +78,7 @@ const Home = ({ categories, products }: Props) => {
               <Tab.Panel className="tabPanel">{showProducts(0)}</Tab.Panel>
               <Tab.Panel className="tabPanel">{showProducts(1)}</Tab.Panel>
               <Tab.Panel className="tabPanel">{showProducts(2)}</Tab.Panel>
-              <Tab.Panel className="tabPanel">{showProducts(3)}</Tab.Panel>
+              {/* <Tab.Panel className="tabPanel">{showProducts(3)}</Tab.Panel> */}
             </Tab.Panels>
           </Tab.Group>
         </div>

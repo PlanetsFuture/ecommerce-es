@@ -2,16 +2,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { SearchIcon, ShoppingBagIcon, UserIcon } from '@heroicons/react/outline'
+import { useSelector } from 'react-redux';
+import { selectBasketItems } from '../redux/basketSlice';
 
 
 function Header() {
     const session = false
+    const items = useSelector(selectBasketItems)
+
     return (
         <header className="sticky top-0 z-30 flex w-full items-center justify-between bg-[#E7ECEE] p-4">
             <div className="flex items-center justify-center md:w-1/5">
                 <Link href="/">
                     <div className="relative w-5 cursor-pointer opacity-75 h-10 transition hover:opacity-100">
-                    <Image src="https://rb.gy/vsvv2o" layout="fill" objectFit="contain"/>
+                    <Image src="/apple.png" layout="fill" objectFit="contain"/>
                     </div>
                  </Link>
             </div>
@@ -28,7 +32,7 @@ function Header() {
                 <Link href="/checkout">
                 <div className="relative cursor-pointer">
                     <span className="absolute -right-1 -top-1 z-50 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-violet-600 text-[10px] text-white">
-                        6
+                        {items.length}
                     </span>
                     <ShoppingBagIcon className="headerIcon" />
                 </div>
