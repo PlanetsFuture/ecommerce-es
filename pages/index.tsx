@@ -1,12 +1,12 @@
-import { Tab } from "@headlessui/react";
-import type { GetServerSideProps } from "next";
-import Head from "next/head";
-import Basket from "../components/Basket";
-import Header from "../components/Header";
-import Landing from "../components/Landing";
-import Product from "../components/Product";
-import { fetchCategories } from "../utils/fetchCategories";
-import { fetchProducts } from "../utils/fetchProducts";
+import { Tab } from "@headlessui/react"
+import type { GetServerSideProps } from "next"
+import Head from "next/head"
+import Basket from "../components/Basket"
+import Header from "../components/Header"
+import Landing from "../components/Landing"
+import Product from "../components/Product"
+import { fetchCategories } from "../utils/fetchCategories"
+import { fetchProducts } from "../utils/fetchProducts"
 
 interface Props {
   categories: Category[]

@@ -1,14 +1,14 @@
 interface Category {
-    _id: string
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  _type: "category"
+  _id: string;
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  _type: "category";
   slug: {
-    _type: "slug"
-    current: string
-  }
-  title: string
+    _type: "slug";
+    current: string;
+  };
+  title: string;
 }
 
 interface Image {
@@ -37,4 +37,19 @@ interface Product {
     _ref: string;
   };
   image: Image[];
+}
+
+interface StripeProduct {
+  id: string;
+  amount_discount: number;
+  amount_subtotal: number;
+  amount_tax: number;
+  amount_total: number;
+  currency: string;
+  description: string;
+  object: string;
+  quantity: number;
+  price: {
+    unit_amount: number;
+  };
 }

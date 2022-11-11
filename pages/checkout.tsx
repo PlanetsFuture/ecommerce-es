@@ -5,12 +5,12 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Currency from "react-currency-formatter";
 import { useSelector } from "react-redux";
-//import Stripe from "stripe";
+import Stripe from "stripe";
 import Button from "../components/Button";
 import { selectBasketItems, selectBasketTotal } from "../redux/basketSlice";
 import CheckoutProduct from "../components/CheckoutProduct";
-//import { fetchPostJSON } from "../utils/api-helpers";
-//import getStripe from "../utils/get-stripejs";
+import { fetchPostJSON } from "../utils/api-helpers";
+import getStripe from "../utils/get-stripejs";
 
 function Checkout() {
   const items = useSelector(selectBasketItems);
