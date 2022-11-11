@@ -1,3 +1,4 @@
+import { ShoppingCartIcon } from '@heroicons/react/outline'
 import Image from 'next/image'
 import React from 'react'
 import { urlFor } from '../sanity'
@@ -15,10 +16,16 @@ function Product({product}: Props) {
             objectFit="contain" />
         </div>
 
-        <div>
-            <div>
-                
+        <div className="flex flex-1 items-center justify-between space-x-3">
+            <div className="space-y-2 text-xl text-white md:text-2xl">
+                <p>{product.title}</p>
+                <p>{product.price}</p>
             </div>
+            <div
+          className="flex h-16 w-16 flex-shrink-0 cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-violet-600 md:h-[70px] md:w-[70px]"
+        >
+          <ShoppingCartIcon className="h-8 w-8 text-white" />
+        </div>
         </div>
     </div>
   )
