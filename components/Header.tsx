@@ -24,8 +24,7 @@ function Header() {
             <Image
               src="https://rb.gy/vsvv2o"
               layout="fill"
-              objectFit="contain"
-            />
+              objectFit="contain" alt={""}            />
           </div>
         </Link>
       </div>
