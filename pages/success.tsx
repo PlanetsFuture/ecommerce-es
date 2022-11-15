@@ -56,8 +56,7 @@ function Success({ products }: Props) {
             <Image
               src="https://rb.gy/vsvv2o"
               layout="fill"
-              objectFit="contain"
-            />
+              objectFit="contain" alt={""}            />
           </div>
         </Link>
       </header>
