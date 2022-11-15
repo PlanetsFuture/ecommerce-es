@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Currency from "react-currency-formatter";
@@ -66,20 +66,20 @@ function Checkout() {
   return (
     <div className="min-h-screen overflow-hidden bg-[#E7ECEE]">
       <Head>
-        <title>Bag - Apple</title>
+        <title>Pago</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main className="mx-auto max-w-5xl pb-24">
         <div className="px-5">
           <h1 className="my-4 text-3xl font-semibold lg:text-4xl">
-            {items.length > 0 ? "Review your bag." : "Your bag is empty."}
+            {items.length > 0 ? "Revisa tu bolsa de compra." : "Tu bolsa de compra está vacía."}
           </h1>
-          <p className="my-4">Free delivery and free returns.</p>
+          <p className="my-4">Entrega y devolución gratuitas por compras mayores de 100 Euros.</p>
 
           {items.length === 0 && (
             <Button
-              title="Continue Shopping"
+              title="Continuar Comprando"
               onClick={() => router.push("/")}
             />
           )}
@@ -101,8 +101,8 @@ function Checkout() {
                     </p>
                   </div>
                   <div className="flex justify-between">
-                    <p>Shipping</p>
-                    <p>FREE</p>
+                    <p>Envío</p>
+                    <p>GRATIS</p>
                   </div>
                   <div className="flex justify-between">
                     <div className="flex flex-col gap-x-1 lg:flex-row">
@@ -124,29 +124,31 @@ function Checkout() {
                 </div>
               </div>
 
-              <div className="my-14 space-y-4">
+              <div className="my-14 space-y-8">
                 <h4 className="text-xl font-semibold">
-                  How would you like to check out?
+                Elige tu método de pago.
                 </h4>
                 <div className="flex flex-col gap-4 md:flex-row">
-                  <div className="order-2 flex flex-1 flex-col items-center rounded-xl bg-gray-200 p-8 py-12 text-center">
+                  <div className="order-2 flex flex-1 flex-col items-center rounded-xl bg-gray-200 p-8 py-12 text-center space-y-6">
                     <h4 className="mb-4 flex flex-col text-xl font-semibold">
-                      <span>Pay Monthly</span>
-                      <span>with Apple Card</span>
+                      Pagar con Paypal
+                      <span>
+                        <Currency quantity={basketTotal} currency="EUR" />
+                      </span>
+                     {/*  <span>with Apple Card</span>
                       <span>
                         €283.16/mo. at 0% APR<sup className="-top-1">◊</sup>
-                      </span>
+                      </span> */}
                     </h4>
-                    <Button title="Check Out with Apple Card Monthly Installments" />
+                    <Button title="Proceder con el Pago" />
                     <p className="mt-2 max-w-[240px] text-[13px]">
-                      €0.00 due today, which includes applicable full-price
-                      items, down payments, shipping, and taxes.
+                      Sistema de pago con Payal está actualmente inactivo.
                     </p>
                   </div>
 
-                  <div className="flex flex-1 flex-col items-center space-y-8 rounded-xl bg-gray-200 p-8 py-12 md:order-2">
+                  <div className="flex flex-1 flex-col items-center space-y-6 rounded-xl bg-gray-200 p-8 py-12 md:order-2">
                     <h4 className="mb-4 flex flex-col text-xl font-semibold">
-                      Pay in full
+                      Pagar con tarjeta de crédito o débito.
                       <span>
                         <Currency quantity={basketTotal} currency="EUR" />
                       </span>
@@ -155,11 +157,12 @@ function Checkout() {
                     <Button
                       noIcon
                       loading={loading}
-                      title="Check Out"
+                      title="Proceder con el Pago"
                       width="w-full"
                       onClick={createCheckoutSession}
                     />
                   </div>
+
                 </div>
               </div>
             </div>

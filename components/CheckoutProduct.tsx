@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from "@heroicons/react/outline";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { urlFor } from "../sanity";
 import Currency from "react-currency-formatter";
@@ -17,7 +17,7 @@ function CheckoutProduct({ id, items }: Props) {
   const removeItemFromBasket = () => {
     dispatch(removeFromBasket({ id }));
 
-    toast.error(`${items[0].title} removed from basket`, {
+    toast.error(`${items[0].title} remover de la cesta`, {
       position: "bottom-center",
     });
   };
@@ -28,8 +28,7 @@ function CheckoutProduct({ id, items }: Props) {
         <Image
           src={urlFor(items[0].image[0]).url()}
           layout="fill"
-          objectFit="contain"
-        />
+          objectFit="contain" alt={""}        />
       </div>
 
       <div className="flex flex-1 items-end lg:items-center">
@@ -43,7 +42,7 @@ function CheckoutProduct({ id, items }: Props) {
           </div>
 
           <p className="flex cursor-pointer items-end text-blue-500 hover:underline">
-            Show product details
+            Detalles del producto
             <ChevronDownIcon className="h-6 w-6" />
           </p>
         </div>
@@ -58,7 +57,7 @@ function CheckoutProduct({ id, items }: Props) {
             onClick={removeItemFromBasket}
             className="text-blue-500 hover:underline"
           >
-            Remove
+            Remover
           </button>
         </div>
       </div>

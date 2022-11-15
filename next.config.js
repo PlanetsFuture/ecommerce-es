@@ -5,3 +5,5 @@ module.exports = {
     domains: ["rb.gy", "cdn.sanity.io", "lh3.googleusercontent.com"],
   },
 };
+
+const nextTranslate = require('next-translate')

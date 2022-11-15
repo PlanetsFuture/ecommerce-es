@@ -1,10 +1,11 @@
-import { ShoppingCartIcon } from '@heroicons/react/outline'
+import { ShoppingCartIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import React from 'react'
 import toast from 'react-hot-toast'
 import { useDispatch } from 'react-redux'
 import { addToBasket } from '../redux/basketSlice'
 import { urlFor } from '../sanity'
+import Footer from './Footer'
 
 interface Props {
     product: Product
@@ -15,7 +16,7 @@ function Product({product}: Props) {
     const addItemToBasket = () => {
          dispatch(addToBasket(product))
 
-         toast.success(`${product.title} added to basked`, 
+         toast.success(`${product.title} añadido a la cesta`, 
          {})
     }
 
@@ -24,13 +25,13 @@ function Product({product}: Props) {
             <div className="relative h-64 w-full md:h-72">
                 <Image src={urlFor(product.image[0]).url()}
                 layout="fill"
-                objectFit="contain" />
+                objectFit="contain" alt={''} />
             </div>
     
             <div className="flex flex-1 items-center justify-between space-x-3">
                 <div className="space-y-2 text-xl text-white md:text-2xl">
                     <p>{product.title}</p>
-                    <p>{product.price}</p>
+                    <p>€ {product.price}</p>
                 </div>
                 <div
               className="flex h-16 w-16 flex-shrink-0 cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-violet-600 md:h-[70px] md:w-[70px]"

@@ -3,7 +3,7 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
   ShoppingCartIcon,
-} from "@heroicons/react/outline";
+} from "@heroicons/react/24/outline";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -47,7 +47,7 @@ function Success({ products }: Props) {
   return (
     <div>
       <Head>
-        <title>Thank you! - DNR Store</title>
+        <title>¡Gracias! - DNR Store</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className="mx-auto max-w-xl">
@@ -69,8 +69,7 @@ function Success({ products }: Props) {
               <Image
                 src="https://rb.gy/vsvv2o"
                 layout="fill"
-                objectFit="contain"
-              />
+                objectFit="contain" alt={""}              />
             </div>
           </Link>
 
@@ -83,39 +82,38 @@ function Success({ products }: Props) {
                 Order #{session_id?.slice(-5)}
               </p>
               <h4 className="text-lg">
-                Thank you{" "}
-                {session ? session.user?.name?.split(" ")[0] : "Guest"}
+                Gracias por tu compra. {" "}
+                {session ? session.user?.name?.split(" ")[0] : " "}
               </h4>
             </div>
           </div>
 
           <div className="mx-4 divide-y divide-gray-300 rounded-md border border-gray-300 p-4 lg:ml-14">
             <div className="space-y-2 pb-3">
-              <p>Your order is confirmed</p>
+              <p>Tu orden ha sido confirmada</p>
               <p className="text-sm text-gray-600">
-                We’ve accepted your order, and we’re getting it ready. Come back
-                to this page for updates on your shipment status.
+                Estamos procesando tu orden. 
               </p>
             </div>
             <div className="pt-3 text-sm">
               <p className="font-medium text-gray-600">
-                Other tracking number:
+              Número de seguimiento:
               </p>
               <p>CNB21441622</p>
             </div>
           </div>
 
           <div className="my-4 mx-4 space-y-2 rounded-md border border-gray-300 p-4 lg:ml-14">
-            <p>Order updates</p>
+            <p>Actualizaciones de pedidos</p>
             <p className="text-sm text-gray-600">
-              You’ll get shipping and delivery updates by email and text.
+              Recibirá actualizaciones de envío y entrega por correo electrónico.
             </p>
           </div>
           <div className="mx-4 flex flex-col items-center justify-between text-sm lg:ml-14 lg:flex-row">
-            <p className="hidden lg:inline">Need help? Contact us</p>
+            <p className="hidden lg:inline">¿Necesita ayuda? Ponte en contacto con nosotros</p>
             {mounted && (
               <Button
-                title="Continue Shopping"
+                title="Continuar Comprando"
                 onClick={() => router.push("/")}
                 width={isTabletOrMobile ? "w-full" : undefined}
                 padding="py-4"
@@ -137,7 +135,7 @@ function Success({ products }: Props) {
                   className="flex items-center space-x-2"
                 >
                   <ShoppingCartIcon className="h-6 w-6" />
-                  <p>Show order summary</p>
+                  <p>Mostrar el resumen del pedido</p>
                   {showOrderSummaryCondition ? (
                     <ChevronUpIcon className="h-4 w-4" />
                   ) : (
@@ -164,8 +162,7 @@ function Success({ products }: Props) {
                           <Image
                             src="https://rb.gy/vsvv2o"
                             layout="fill"
-                            objectFit="contain"
-                          />
+                            objectFit="contain" alt={""}                          />
                         </div>
                         <div className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-[gray] text-xs">
                           {product.quantity}
@@ -189,20 +186,20 @@ function Success({ products }: Props) {
                     </p>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <p className="text-[gray]">Discount</p>
+                    <p className="text-[gray]">Descuento</p>
                     <p className="text-[gray]"></p>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <p className="text-[gray]">Shipping</p>
+                    <p className="text-[gray]">Envío</p>
                     <p className="font-medium">
-                      <Currency quantity={20} currency="USD" />
+                      <Currency quantity={20} currency="EUR" />
                     </p>
                   </div>
                 </div>
                 <div className="flex justify-between pt-4">
                   <p>Total</p>
                   <p className="flex items-center gap-x-2 text-xs text-[gray]">
-                    USD
+                    EUR
                     <span className="text-xl font-medium text-black">
                       <Currency quantity={subtotal + 20} />
                     </span>
