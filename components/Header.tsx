@@ -35,7 +35,7 @@ function Header() {
         <a className="headerLink">Negocio</a>
       </div>
       <div className="flex items-center justify-center gap-x-4 md:w-1/5">
-        <MagnifyingGlassIcon className="headerIcon" />
+       {/*  <MagnifyingGlassIcon className="headerIcon" /> */}
         <Link href="/checkout">
           <div className="relative cursor-pointer">
             {items.length > 0 && (
